@@ -7,37 +7,18 @@ package org.usfirst.frc.team4619.robot;
  */
 public class RobotMap {
     // For example to map the left and right motors, you could define the
-    // following variables to use with your drivetrain subsystem.
-    // public static int leftMotor = 1;
-    // public static int rightMotor = 2;
-    
-    // If you are using multiple modules, make sure to define both the port
-    // number and the module. For example you with a rangefinder:
-    // public static int rangefinderPort = 1;
-    // public static int rangefinderModule = 1;
+
+	public final static int A = 1;
+	public final static int B = 2;
+	public final static int X = 3;
+	public final static int Y = 4;
+	public final static int Lbumper = 5;
+	public final static int RBumper = 6;
+	public final static int Back = 7;
+	public final static int Start = 8;
 	
-	public enum GameField
-	{
-		//create constants
-		FIELD_LENGTH(4),FIELD_WIDTH(0);
-		
-		//set values for constants 
-		int constants = 0;
-		private GameField(int i)
-		{
-			constants = i;
-		}
-		
-		//get values of constants
-		public int getGameFieldConstants()
-		{
-			return constants;
-		}
-		
-	}
-	
-	public static int frontLeftDrive = 0;
-	public static int backLeftDrive = 1;
-	public static int frontRightDrive = 2;
-	public static int backRightDrive = 3;
+	public final static int frontLeftDrive = 0;
+	public final static int backLeftDrive = 1;
+	public final static int frontRightDrive = 2;
+	public final static int backRightDrive = 3;
 }

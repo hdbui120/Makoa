@@ -26,6 +26,9 @@ public class DriveBaseSubsys extends Subsystem {
 		backLeft = bl;
 		frontRight = fr;
 		backRight = br;
+		
+		RobotDrive driveTrain = new RobotDrive(frontLeft, backLeft,
+								    frontRight, backRight);
 	}
 	
     public void initDefaultCommand() {
