@@ -11,6 +11,7 @@ import org.usfirst.frc.team4619.robot.commands.ExampleCommand;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	
 	//created a joystick object (the xbox controller)
     public Joystick xbox = new Joystick(0);	
     
@@ -23,11 +24,21 @@ public class OI {
 	public Button RBumper;
 	public Button Back;
 	public Button Start;
-    
+	
 	//class constructor
 	public OI()
 	{
 		Button A  = new JoystickButton(xbox,RobotMap.A);
+	}
+	
+	public double getXAxis()
+	{
+		return xbox.getRawAxis(0);
+	}
+	
+	public double getYAxis()
+	{
+		return xbox.getRawAxis(1);
 	}
 }
 

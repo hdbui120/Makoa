@@ -1,11 +1,12 @@
 package org.usfirst.frc.team4619.robot.subsystems;
 
 import org.usfirst.frc.team4619.robot.RobotMap;
+import org.usfirst.frc.team4619.robot.commands.DriveJoystick;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.usfirst.frc.team4619.robot.OI;
 
 /**
  *
@@ -19,6 +20,14 @@ public class DriveBaseSubsys extends Subsystem {
 	private SpeedController frontRight; 
 	private SpeedController backRight; 
 	
+	OI xboxCon = new OI();
+	
+	private RobotDrive driveTrain = new RobotDrive(frontLeft, backLeft,
+												   frontRight, backRight);	
+	
+	public DriveBaseSubsys()
+	{		}
+	
 	public DriveBaseSubsys(SpeedController fl, SpeedController bl,
 							SpeedController fr, SpeedController br)
 	{
@@ -26,14 +35,16 @@ public class DriveBaseSubsys extends Subsystem {
 		backLeft = bl;
 		frontRight = fr;
 		backRight = br;
-		
-		RobotDrive driveTrain = new RobotDrive(frontLeft, backLeft,
-								    frontRight, backRight);
+	}
+	
+	public void arcadeDriv(double xAxis, double yAxis)
+	{
+		driveTrain.arcadeDrive(xAxis, yAxis, true);
 	}
 	
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        super.setDefaultCommand(new DriveJoystick());
     }
 }
 

@@ -12,13 +12,13 @@ public class RobotMap {
 	public final static int B = 2;
 	public final static int X = 3;
 	public final static int Y = 4;
-	public final static int Lbumper = 5;
-	public final static int RBumper = 6;
-	public final static int Back = 7;
-	public final static int Start = 8;
+	public final static int L_BUMPER = 5;
+	public final static int R_BUMPER = 6;
+	public final static int BACK = 7;
+	public final static int START = 8;
 	
-	public final static int frontLeftDrive = 0;
-	public final static int backLeftDrive = 1;
-	public final static int frontRightDrive = 2;
-	public final static int backRightDrive = 3;
+	public final static int FRONT_LEFT_DRIVE = 0;
+	public final static int BACK_LEFT_DRIVE = 1;
+	public final static int FRONT_RIGHT_DRIVE = 2;
+	public final static int BACK_RIGHT_DDRIVE = 3;
 }
