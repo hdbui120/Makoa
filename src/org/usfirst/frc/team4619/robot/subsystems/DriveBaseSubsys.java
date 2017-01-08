@@ -37,6 +37,26 @@ public class DriveBaseSubsys extends Subsystem {
 		backRight = br;
 	}
 	
+	public SpeedController getFL()
+	{
+		return frontLeft;
+	}
+	
+	public SpeedController getFR()
+	{
+		return frontRight;
+	}
+	
+	public SpeedController getBL()
+	{
+		return backLeft;
+	}
+	
+	public SpeedController getBR()
+	{
+		return backRight;
+	}
+	
 	public void arcadeDriv(double xAxis, double yAxis)
 	{
 		driveTrain.arcadeDrive(xAxis, yAxis, true);

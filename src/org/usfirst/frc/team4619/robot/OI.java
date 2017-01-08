@@ -25,10 +25,26 @@ public class OI {
 	public Button Back;
 	public Button Start;
 	
+	public int[] buttonValues = {RobotMap.A, RobotMap.B, RobotMap.X, RobotMap.Y,
+								 RobotMap.L_BUMPER, RobotMap.R_BUMPER, RobotMap.BACK, RobotMap.START};
+	
+	public Button [] buttons = {A, B, X, Y, LBumper, RBumper, Back, Start};
+	
+	public void setButtonValues()
+	{
+		for(Button xboxButtons:buttons)
+		{
+			for(int values:buttonValues)
+			{
+				xboxButtons = new JoystickButton(xbox, values);
+			}
+		}
+	}
+	
 	//class constructor
 	public OI()
 	{
-		Button A  = new JoystickButton(xbox,RobotMap.A);
+		setButtonValues();
 	}
 	
 	public double getXAxis()
