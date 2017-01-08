@@ -20,8 +20,6 @@ public class DriveBaseSubsys extends Subsystem {
 	private SpeedController frontRight; 
 	private SpeedController backRight; 
 	
-	OI xboxCon = new OI();
-	
 	private RobotDrive driveTrain = new RobotDrive(frontLeft, backLeft,
 												   frontRight, backRight);	
 	
