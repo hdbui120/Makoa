@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team4619.robot;
 
+import org.usfirst.frc.team4619.robot.commands.AutoTest;
 import org.usfirst.frc.team4619.robot.subsystems.ClimbingSub;
 import org.usfirst.frc.team4619.robot.subsystems.DriveBaseSubsys;
 import org.usfirst.frc.team4619.robot.subsystems.GearSub;
@@ -31,6 +32,8 @@ public class Robot extends IterativeRobot {
 	public VictorSP backLeft;
 	public VictorSP frontRight;
 	public VictorSP backRight;
+	
+	AutoTest autoCommand;
 	
     Command autonomousCommand;
     SendableChooser chooser;
@@ -79,7 +82,7 @@ public class Robot extends IterativeRobot {
 	 */
     public void autonomousInit() {
         autonomousCommand = (Command) chooser.getSelected();
-        
+        autoCommand = new AutoTest();
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
 		case "My Auto":
@@ -100,6 +103,7 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        autoCommand.start();
     }
 
     public void teleopInit() {
